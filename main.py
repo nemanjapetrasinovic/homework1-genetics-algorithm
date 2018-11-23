@@ -6,6 +6,7 @@ from komponente import HDD
 from komponente import Napajanje
 from komponente import OptickiUredjaj
 from konfiguracija import Konfiguracija
+from ga import GAlgoritam
 import dataProvider
 
 
@@ -23,15 +24,8 @@ grafickeKartice = dataProvider.dodajGrafickeKartice()
 ramMemorije = dataProvider.dodajRAM()
 storage = dataProvider.dodajStorage()
 napajanja = dataProvider.dodajNapajanja()
-optika = dataProvider.dodajOpticeUredjaje()
+optickiUredjaji = dataProvider.dodajOpticeUredjaje()
 
-hdd = HDD("Toshiba", "Interni", "3.5", 1, "Sata III", 7200, 32, 5999)
-storage.append(hdd)
+ga = GAlgoritam()
 
-n = Napajanje("Cooler Master", "Standardno", 600, 5000)
-napajanja.append(n)
-
-op = OptickiUredjaj("Asus", "Interni", "DVD - RW", 2999)
-optika.append(op)
-
-#k = Konfiguracija(m, p, gr, ram, hdd, n, op)
+k = ga.RandomKonfiguracija(maticnePloce, procesori, grafickeKartice, ramMemorije, storage, napajanja, optickiUredjaji)
