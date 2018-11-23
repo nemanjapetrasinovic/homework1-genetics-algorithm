@@ -1,4 +1,4 @@
 *.pyc
 .vscode
-/.main.py.swp
 /.ropeproject
+/*.swp

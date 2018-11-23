@@ -19,7 +19,11 @@ optika = []
 
 procesori = dataProvider.dodajProcesore()
 maticnePloce = dataProvider.dodajMaticnePloce()
+grafickeKartice = dataProvider.dodajGrafickeKartice()
 ramMemorije = dataProvider.dodajRAM()
+storage = dataProvider.dodajStorage()
+napajanja = dataProvider.dodajNapajanja()
+optika = dataProvider.dodajOpticeUredjaje()
 
 hdd = HDD("Toshiba", "Interni", "3.5", 1, "Sata III", 7200, 32, 5999)
 storage.append(hdd)
