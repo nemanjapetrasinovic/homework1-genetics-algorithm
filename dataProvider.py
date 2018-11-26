@@ -30,10 +30,10 @@ def dodajProcesore():
 def dodajMaticnePloce():
     maticnePloce = []
 
-    m = MaticnaPloca("Intel", "Micro ATX", "Asus", "DDR4", "AMD Radeon 2048 MB", 6799)
+    m = MaticnaPloca("Intel", "Micro ATX", "Asus", "DDR3", "AMD Radeon 2048 MB", 6799)
     maticnePloce.append(m)
 
-    m = MaticnaPloca("AMD", "Micro ATX", "ASRock", "DDR4", "AMD Radeon 2048 MB", 6699)
+    m = MaticnaPloca("AMD", "Micro ATX", "ASRock", "DDR3", "AMD Radeon 2048 MB", 6699)
     maticnePloce.append(m)
 
     m = MaticnaPloca("AMD", "ATX", "Asus", "DDR4", "AMD Ryzen 2048 MB", 21999)
@@ -73,7 +73,7 @@ def dodajStorage():
     storage = []
 
     hdd = HDD("Toshiba", "Interni", 3.5, "500 GB", "SATA III", 7200, 64, 5499)
-    storage.append(HDD)
+    storage.append(hdd)
 
     hdd = HDD("Seagate", "Interni", 3.5, "1 TB", "SATA III", 7200, 64, 5499)
     storage.append(hdd)

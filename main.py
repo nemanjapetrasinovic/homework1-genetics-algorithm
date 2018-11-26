@@ -8,6 +8,7 @@ from komponente import OptickiUredjaj
 from konfiguracija import Konfiguracija
 from ga import GAlgoritam
 import dataProvider
+import random
 
 
 procesori = []
@@ -26,6 +27,33 @@ storage = dataProvider.dodajStorage()
 napajanja = dataProvider.dodajNapajanja()
 optickiUredjaji = dataProvider.dodajOpticeUredjaje()
 
+'#Izvrsavanje algoritma'
+
 ga = GAlgoritam()
 
-k = ga.RandomKonfiguracija(maticnePloce, procesori, grafickeKartice, ramMemorije, storage, napajanja, optickiUredjaji)
+populacija = []
+novaPopulacija = []
+
+for x in range(50):
+    k = ga.RandomKonfiguracija(maticnePloce, procesori, grafickeKartice, ramMemorije, storage, napajanja, optickiUredjaji)
+    populacija.append(k)
+    populacija.sort(key=Konfiguracija.fittnes, reverse=True)
+
+while populacija[0].fittnes() < 6:
+    for i in range(25):
+        ga.ukrstanje(populacija[random.randint(0, 49)], populacija[random.randint(0, 49)], novaPopulacija)
+    populacija = novaPopulacija
+    populacija.sort(key=Konfiguracija.fittnes, reverse=True)
+    novaPopulacija = []
+
+# najFittness = 0
+# najIndeks = 0
+# for i in range(50):
+#     if populacija[i].fittnes() > najFittness:
+#         najFittness = populacija[i].fittnes()
+#         najIndeks = i
+
+# for i in range(50):
+#     print(populacija[i].fittnes())
+
+print(" ")
