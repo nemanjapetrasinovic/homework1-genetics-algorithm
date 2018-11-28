@@ -33,3 +33,19 @@ class Konfiguracija:
     def racunajCenu(self):
         self.cena = self.maticnaPloca.cena + self.procesor.cena + self.grafickaKartica.cena + \
             self.ramMemorija.cena + self.storage.cena + self.napajanje.cena + self.optickiUredjaj.cena
+
+    def stampaj(self):
+        print("Cena konfiguracije: " + self.cena.__str__())
+        self.maticnaPloca.stampaj()
+        print("_________________")
+        self.procesor.stampaj()
+        print("_________________")
+        self.grafickaKartica.stampaj()
+        print("_________________")
+        self.ramMemorija.stampaj()
+        print("_________________")
+        self.napajanje.stampaj()
+        print("_________________")
+        self.storage.stampaj()
+        print("_________________")
+        self.optickiUredjaj.stampaj()

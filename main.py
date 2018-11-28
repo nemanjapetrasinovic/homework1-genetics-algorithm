@@ -42,18 +42,13 @@ for x in range(50):
 while populacija[0].fittnes() < 6:
     for i in range(25):
         ga.ukrstanje(populacija[random.randint(0, 49)], populacija[random.randint(0, 49)], novaPopulacija)
+    
     populacija = novaPopulacija
+    
+    for i in range(50):
+        ga.mutacija(populacija[i], procesori, maticnePloce, grafickeKartice, ramMemorije, storage, napajanja, optickiUredjaji)
+    
     populacija.sort(key=Konfiguracija.fittnes, reverse=True)
     novaPopulacija = []
 
-# najFittness = 0
-# najIndeks = 0
-# for i in range(50):
-#     if populacija[i].fittnes() > najFittness:
-#         najFittness = populacija[i].fittnes()
-#         najIndeks = i
-
-# for i in range(50):
-#     print(populacija[i].fittnes())
-
-print(" ")
+populacija[0].stampaj()
